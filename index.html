@@ -27,19 +27,45 @@
         </div>
 
         <div class="album entrada-cinco" id="album">
-          <div class="moldura">
-            <div class="slides" id="slides" aria-live="polite">
-              <div class="vinheta"></div>
-              <span class="contador" id="contador">01 / 10</span>
+          <div class="moldura moldura-abertura" id="abertura" aria-label="Vídeo de abertura">
+            <div class="slides palco-abertura">
+              <video
+                class="video-abertura"
+                id="video-abertura"
+                src="https://drive.usercontent.google.com/download?id=19RVtHDgT4-FL3T4mgcM5rL6zJx6YIkOC&export=download&confirm=t"
+                controls
+                autoplay
+                playsinline
+                preload="metadata"
+              ></video>
+              <div class="vinheta vinheta-abertura"></div>
+              <div class="legenda-abertura">
+                <svg class="icone-coracao pequeno" viewBox="0 0 64 58" aria-hidden="true"><path d="M32 54S5 39 5 18C5 8 17 2 26 10l6 6 6-6c9-8 21-2 21 8 0 21-27 36-27 36Z"/></svg>
+                <span>Nosso vídeo de abertura</span>
+              </div>
             </div>
-            <button class="seta anterior" id="anterior" type="button" aria-label="Foto anterior">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>
-            </button>
-            <button class="seta proxima" id="proxima" type="button" aria-label="Próxima foto">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+            <button class="fechar-abertura" id="fechar-abertura" type="button" aria-label="Fechar vídeo e ver as lembranças">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+              <span>Ver lembranças</span>
             </button>
           </div>
-          <div class="controles" id="controles" aria-label="Escolher foto"></div>
+
+          <div id="galeria" hidden>
+            <div class="moldura">
+              <div class="slides" id="slides" aria-live="polite">
+                <div class="vinheta"></div>
+                <span class="tipo-midia" id="tipo-midia">foto</span>
+                <span class="contador" id="contador">01 / 47</span>
+              </div>
+              <button class="seta anterior" id="anterior" type="button" aria-label="Lembrança anterior">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg>
+              </button>
+              <button class="seta proxima" id="proxima" type="button" aria-label="Próxima lembrança">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>
+              </button>
+            </div>
+            <div class="controles" id="controles" aria-label="Escolher lembrança"></div>
+          </div>
         </div>
       </section>
 
