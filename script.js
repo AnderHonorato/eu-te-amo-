@@ -89,10 +89,16 @@ midias.forEach(([src, descricao, tipo, ajuste], indice) => {
     video.preload = "metadata";
     video.className = "video-slide";
     video.setAttribute("aria-label", descricao);
+    video.setAttribute("playsinline", "");
+    video.addEventListener("error", () => {
+      figura.dataset.erro = "true";
+      video.controls = false;
+    });
     video.addEventListener("ended", () => irPara(atual + 1));
     figura.appendChild(video);
   }
-  slides.insertBefore(figura, slides.firstChild);
+  // Keep DOM order aligned with `midias`, so navigation points match slides.
+  slides.appendChild(figura);
 
   const ponto = document.createElement("button");
   ponto.type = "button";
@@ -137,7 +143,7 @@ window.setTimeout(() => {
   videoAbertura.currentTime = 0;
   videoAbertura.muted = true;
   reproduzirAbertura();
-}, 2900);
+}, 4300);
 
 function irPara(indice) {
   atual = (indice + midias.length) % midias.length;
@@ -148,7 +154,10 @@ function irPara(indice) {
     const imagem = slide.querySelector("img");
     const video = slide.querySelector("video");
     if (imagem) imagem.alt = ativo ? midias[i][1] : "";
-    if (video && !ativo) video.pause();
+    if (video) {
+      if (!ativo) video.pause();
+      if (ativo && video.readyState === 0) video.load();
+    }
     pontos[i].classList.toggle("ativo", ativo);
     pontos[i].setAttribute("aria-current", ativo ? "true" : "false");
   });
