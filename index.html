@@ -15,7 +15,38 @@
       <div class="brilho brilho-dois"></div>
       <div class="estrelas" aria-hidden="true"></div>
 
-      <section class="conteudo" aria-labelledby="titulo-principal">
+      <section class="intro-amor" id="intro-amor" aria-label="Eu te amo">
+        <span class="intro-sobretitulo">uma mensagem para você</span>
+        <div class="intro-titulo-linha">
+          <svg class="icone-coracao" viewBox="0 0 64 58" aria-hidden="true"><path d="M32 54S5 39 5 18C5 8 17 2 26 10l6 6 6-6c9-8 21-2 21 8 0 21-27 36-27 36Z"/></svg>
+          <p class="titulo-intro">Eu te amo</p>
+        </div>
+        <span class="linha-intro" aria-hidden="true"></span>
+      </section>
+
+      <section class="story-overlay" id="story-overlay" aria-label="Vídeo de abertura" hidden>
+        <div class="story-frame">
+          <video
+            class="story-video"
+            id="video-abertura"
+            src="https://drive.usercontent.google.com/download?id=19RVtHDgT4-FL3T4mgcM5rL6zJx6YIkOC&export=download&confirm=t"
+            controls
+            playsinline
+            preload="auto"
+          ></video>
+          <div class="story-sombra" aria-hidden="true"></div>
+          <div class="story-topo" aria-hidden="true"><span class="story-progresso"></span><span>Nosso amor</span></div>
+          <button class="fechar-story" id="fechar-abertura" type="button" aria-label="Fechar vídeo e ver as lembranças">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+          </button>
+          <button class="iniciar-story" id="iniciar-story" type="button" hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 9 6-9 6Z"/></svg>
+            <span>Reproduzir vídeo</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="conteudo" id="conteudo" aria-labelledby="titulo-principal" hidden>
         <div class="mensagem">
           <span class="sobretitulo entrada-um">para o amor da minha vida</span>
           <div class="titulo-linha entrada-dois">
@@ -27,30 +58,7 @@
         </div>
 
         <div class="album entrada-cinco" id="album">
-          <div class="moldura moldura-abertura" id="abertura" aria-label="Vídeo de abertura">
-            <div class="slides palco-abertura">
-              <video
-                class="video-abertura"
-                id="video-abertura"
-                src="https://drive.usercontent.google.com/download?id=19RVtHDgT4-FL3T4mgcM5rL6zJx6YIkOC&export=download&confirm=t"
-                controls
-                autoplay
-                playsinline
-                preload="metadata"
-              ></video>
-              <div class="vinheta vinheta-abertura"></div>
-              <div class="legenda-abertura">
-                <svg class="icone-coracao pequeno" viewBox="0 0 64 58" aria-hidden="true"><path d="M32 54S5 39 5 18C5 8 17 2 26 10l6 6 6-6c9-8 21-2 21 8 0 21-27 36-27 36Z"/></svg>
-                <span>Nosso vídeo de abertura</span>
-              </div>
-            </div>
-            <button class="fechar-abertura" id="fechar-abertura" type="button" aria-label="Fechar vídeo e ver as lembranças">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
-              <span>Ver lembranças</span>
-            </button>
-          </div>
-
-          <div id="galeria" hidden>
+          <div id="galeria">
             <div class="moldura">
               <div class="slides" id="slides" aria-live="polite">
                 <div class="vinheta"></div>
@@ -69,7 +77,7 @@
         </div>
       </section>
 
-      <div class="rodape entrada-seis">
+      <div class="rodape entrada-seis" id="rodape" hidden>
         <svg class="icone-coracao pequeno" viewBox="0 0 64 58" aria-hidden="true"><path d="M32 54S5 39 5 18C5 8 17 2 26 10l6 6 6-6c9-8 21-2 21 8 0 21-27 36-27 36Z"/></svg>
         <span>Feito com amor</span>
       </div>

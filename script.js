@@ -52,9 +52,13 @@ const midias = [
 ];
 
 const album = document.querySelector("#album");
-const abertura = document.querySelector("#abertura");
+const introAmor = document.querySelector("#intro-amor");
+const storyOverlay = document.querySelector("#story-overlay");
+const conteudo = document.querySelector("#conteudo");
+const rodape = document.querySelector("#rodape");
 const galeria = document.querySelector("#galeria");
 const videoAbertura = document.querySelector("#video-abertura");
+const iniciarStory = document.querySelector("#iniciar-story");
 const slides = document.querySelector("#slides");
 const controles = document.querySelector("#controles");
 const contador = document.querySelector("#contador");
@@ -104,10 +108,25 @@ const pontos = [...document.querySelectorAll(".ponto")];
 function concluirAbertura() {
   aberturaAtiva = false;
   videoAbertura.pause();
-  abertura.hidden = true;
-  galeria.hidden = false;
+  storyOverlay.hidden = true;
+  conteudo.hidden = false;
+  rodape.hidden = false;
   irPara(0);
 }
+
+function reproduzirAbertura() {
+  const tentativa = videoAbertura.play();
+  if (tentativa) {
+    tentativa.then(() => { iniciarStory.hidden = true; }).catch(() => { iniciarStory.hidden = false; });
+  }
+}
+
+window.setTimeout(() => {
+  introAmor.hidden = true;
+  storyOverlay.hidden = false;
+  videoAbertura.currentTime = 0;
+  reproduzirAbertura();
+}, 2900);
 
 function irPara(indice) {
   atual = (indice + midias.length) % midias.length;
@@ -128,6 +147,8 @@ function irPara(indice) {
 }
 
 videoAbertura.addEventListener("ended", concluirAbertura);
+videoAbertura.addEventListener("canplay", reproduzirAbertura);
+iniciarStory.addEventListener("click", reproduzirAbertura);
 document.querySelector("#fechar-abertura").addEventListener("click", concluirAbertura);
 document.querySelector("#anterior").addEventListener("click", () => irPara(atual - 1));
 document.querySelector("#proxima").addEventListener("click", () => irPara(atual + 1));
