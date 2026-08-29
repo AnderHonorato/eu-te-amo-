@@ -12,6 +12,7 @@ body {
   margin: 0;
   color: var(--creme);
   background: var(--noite);
+  overflow-x: hidden;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 button { font: inherit; }
@@ -69,12 +70,12 @@ button { font: inherit; }
 .conteudo {
   width: min(1120px, 100%);
   display: grid;
-  grid-template-columns: .82fr 1.18fr;
+  grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
   align-items: center;
   gap: clamp(2rem, 7vw, 7rem);
 }
 
-.mensagem { position: relative; z-index: 2; }
+.mensagem { position: relative; z-index: 2; min-width: 0; }
 .sobretitulo {
   display: block;
   margin-bottom: 1.25rem;
@@ -438,7 +439,15 @@ h1 {
 @keyframes entrar-story { from { opacity: 0; } to { opacity: 1; } }
 @keyframes crescer-progresso { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
-@media (max-width: 780px) {
+@media (min-width: 781px) and (max-width: 1040px) {
+  .pagina-amor { padding-inline: clamp(1.25rem, 4vw, 3rem); }
+  .conteudo { gap: clamp(1.5rem, 4vw, 3rem); }
+  h1 { font-size: clamp(4rem, 8vw, 6rem); }
+  .declaracao { max-width: 310px; }
+  .moldura, .controles { width: min(100%, 430px); }
+}
+
+@media (max-width: 980px) {
   .pagina-amor { min-height: 100svh; overflow-y: auto; padding: 2.6rem 1.1rem 4.6rem; place-items: start center; }
   .conteudo { grid-template-columns: 1fr; gap: 2.2rem; }
   .mensagem { text-align: center; }

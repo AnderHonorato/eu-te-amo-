@@ -163,7 +163,13 @@ function irPara(indice) {
   });
   tipoMidia.textContent = midias[atual][2] === "video" ? "vídeo" : "foto";
   contador.textContent = String(atual + 1).padStart(2, "0") + " / " + String(midias.length).padStart(2, "0");
-  pontos[atual].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+  // Scroll only the indicator strip; `scrollIntoView` could horizontally
+  // scroll the whole page and crop the desktop layout.
+  const pontoAtual = pontos[atual];
+  controles.scrollTo({
+    left: pontoAtual.offsetLeft - (controles.clientWidth - pontoAtual.offsetWidth) / 2,
+    behavior: "smooth",
+  });
 }
 
 videoAbertura.addEventListener("ended", concluirAbertura);
