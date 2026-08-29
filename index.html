@@ -29,8 +29,10 @@
           <video
             class="story-video"
             id="video-abertura"
-            src="https://drive.usercontent.google.com/download?id=19RVtHDgT4-FL3T4mgcM5rL6zJx6YIkOC&export=download&confirm=t"
+            src="./videos/abertura.mp4"
             controls
+            autoplay
+            muted
             playsinline
             preload="auto"
           ></video>
@@ -38,6 +40,10 @@
           <div class="story-topo" aria-hidden="true"><span class="story-progresso"></span><span>Nosso amor</span></div>
           <button class="fechar-story" id="fechar-abertura" type="button" aria-label="Fechar vídeo e ver as lembranças">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+          </button>
+          <button class="ativar-som-story" id="ativar-som-story" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 10v4h4l5 4V6l-5 4H5Zm12-1.5c1.3 1.3 1.3 5.7 0 7"/></svg>
+            <span>Ativar som</span>
           </button>
           <button class="iniciar-story" id="iniciar-story" type="button" hidden>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 9 6-9 6Z"/></svg>

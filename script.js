@@ -1,5 +1,4 @@
 const imagemDrive = (id) => "https://drive.google.com/thumbnail?id=" + id + "&sz=w1600";
-const videoDrive = (id) => "https://drive.usercontent.google.com/download?id=" + id + "&export=download&confirm=t";
 
 const midias = [
   ["./fotos/foto-01.jpg", "Um abraço cheio de carinho em um jardim iluminado", "imagem", "contain"],
@@ -23,15 +22,15 @@ const midias = [
   [imagemDrive("157Ry3kX5LVXE0RQFeWOXLa7foJci42XI"), "Nós dois juntos em 18 de julho de 2026", "imagem", "contain"],
   [imagemDrive("1mwSos5lhCGeEk4ioqkkLXV_T8nL9uvrp"), "Uma lembrança especial de 18 de julho de 2026", "imagem", "contain"],
   [imagemDrive("1OjWj8TNYkuKhuWa8mNBN2xrBq8DetDu6"), "Nossa lembrança de julho de 2026", "imagem", "contain"],
-  [videoDrive("1ApdK2K4O4Fjxxq5Ucc5QVlr8Kl_cYhIo"), "Vídeo de uma lembrança nossa em julho", "video"],
+  ["./videos/lembranca-01.mp4", "Vídeo de uma lembrança nossa em julho", "video"],
   [imagemDrive("1EfR6HrCQy5Ut_-gVCinhj_MRSou5icoq"), "Nossa lembrança de 30 de julho de 2026", "imagem", "contain"],
-  [videoDrive("1-prgrVSVY7lWVo79KwS8E9e3W_7J3q7P"), "Vídeo de uma lembrança nossa", "video"],
+  ["./videos/lembranca-02.mp4", "Vídeo de uma lembrança nossa", "video"],
   [imagemDrive("1VwI9vPm1xt7C5uYPzQt5OXIBAzjRUoYv"), "Imagem de uma lembrança em vídeo", "imagem", "contain"],
   [imagemDrive("1Lo3wCN3kNPqK5nHJ7rsV8QnQuAQ2FmKE"), "Nossa madrugada de 9 de agosto de 2026", "imagem", "contain"],
   [imagemDrive("1_hx1NMuFJVxHmMj8eoVrgxvrOfGVUT6f"), "Nós dois em 9 de agosto de 2026", "imagem", "contain"],
-  [videoDrive("1dHbErSfweWO5yW7lmWT_er17kSQH_M5k"), "Vídeo da nossa história em agosto", "video"],
+  ["./videos/lembranca-03.mp4", "Vídeo da nossa história em agosto", "video"],
   [imagemDrive("1QvcrRBiz4S004WWI1vwmlZYcWXw753xL"), "Nossa lembrança de 11 de agosto de 2026", "imagem", "contain"],
-  [videoDrive("12zNU6Xvn02KeGyTXa5-F0qlypSGyMcas"), "Vídeo de uma lembrança nossa em agosto", "video"],
+  ["./videos/lembranca-04.mp4", "Vídeo de uma lembrança nossa em agosto", "video"],
   [imagemDrive("1NqcEF91wNtow1loC5InuELelp08-fBmU"), "Ilustração especial do nosso amor", "imagem", "contain"],
   [imagemDrive("1IFnscMRuKQmqJTI0xzvKCUI6p728Q9Kf"), "Ilustração de nós dois", "imagem", "contain"],
   [imagemDrive("1m33izix1c1q2JARWn5G5nOmK2wUPGC16"), "Cena ilustrada da nossa história", "imagem", "contain"],
@@ -40,13 +39,13 @@ const midias = [
   [imagemDrive("1_R7wvCf1ZUbTs3lFSjax-ltbCjbZl9L8"), "Uma lembrança compartilhada por mensagem", "imagem", "contain"],
   [imagemDrive("1gUEtW8N9QmjGA8o2jnkUj6qITrWUp479"), "Arte romântica sobre nós dois", "imagem", "contain"],
   [imagemDrive("1u50yfAJAWlq-7Dnrvt-8J0W4SXegEvrC"), "Arte da nossa história juntos", "imagem", "contain"],
-  [videoDrive("1TM3n1Wd3LKgGohf8KDKXrWrPm7u0Zc2E"), "Vídeo de 23 de agosto de 2026", "video"],
+  ["./videos/lembranca-05.mp4", "Vídeo de 23 de agosto de 2026", "video"],
   [imagemDrive("16DKOA8fFgnp2pXB7F2XEAYEQbfRhyqsh"), "Cena cinematográfica da nossa história", "imagem", "contain"],
   [imagemDrive("1D4t0pTd7Gi-wtzfeyZ-4txWEDKxHJRTU"), "Nós dois em uma cena de conto de fadas", "imagem", "contain"],
   [imagemDrive("1hrj3JrkPRRdySPOpKM3zV4IJHQ7w33Mi"), "Cena romântica de conto de fadas", "imagem", "contain"],
   [imagemDrive("16f3CPtbTqwOEJlVzQKf2zx9gaCYSYm9T"), "Montagem cinematográfica da nossa história", "imagem", "contain"],
   [imagemDrive("1RYOGN_KFGRtkixzk5SrnbdP3FclyOQoC"), "Cena final cinematográfica do nosso amor", "imagem", "contain"],
-  [videoDrive("1Rl-qW_62Xo-VrJqyUyBGxfID49_pYuyx"), "Vídeo especial de 26 de agosto de 2026", "video"],
+  ["./videos/lembranca-06.mp4", "Vídeo especial de 26 de agosto de 2026", "video"],
   [imagemDrive("14UX4kPTV5I0gOBXuruthgyeNtrsrUoP0"), "Nossa lembrança de 26 de agosto de 2026", "imagem", "contain"],
   [imagemDrive("10jvGoXB0DTo-uQN1xzu8JnmP2AcgQRGH"), "Última ilustração da nossa história", "imagem", "contain"],
 ];
@@ -59,6 +58,7 @@ const rodape = document.querySelector("#rodape");
 const galeria = document.querySelector("#galeria");
 const videoAbertura = document.querySelector("#video-abertura");
 const iniciarStory = document.querySelector("#iniciar-story");
+const ativarSomStory = document.querySelector("#ativar-som-story");
 const slides = document.querySelector("#slides");
 const controles = document.querySelector("#controles");
 const contador = document.querySelector("#contador");
@@ -66,6 +66,7 @@ const tipoMidia = document.querySelector("#tipo-midia");
 let atual = 0;
 let pausado = false;
 let aberturaAtiva = true;
+let somAtivo = false;
 let inicioToque = null;
 
 midias.forEach(([src, descricao, tipo, ajuste], indice) => {
@@ -115,16 +116,26 @@ function concluirAbertura() {
 }
 
 function reproduzirAbertura() {
+  videoAbertura.muted = !somAtivo;
   const tentativa = videoAbertura.play();
   if (tentativa) {
     tentativa.then(() => { iniciarStory.hidden = true; }).catch(() => { iniciarStory.hidden = false; });
   }
 }
 
+function ativarSom() {
+  somAtivo = true;
+  videoAbertura.muted = false;
+  videoAbertura.volume = 1;
+  ativarSomStory.hidden = true;
+  reproduzirAbertura();
+}
+
 window.setTimeout(() => {
   introAmor.hidden = true;
   storyOverlay.hidden = false;
   videoAbertura.currentTime = 0;
+  videoAbertura.muted = true;
   reproduzirAbertura();
 }, 2900);
 
@@ -148,7 +159,10 @@ function irPara(indice) {
 
 videoAbertura.addEventListener("ended", concluirAbertura);
 videoAbertura.addEventListener("canplay", reproduzirAbertura);
+videoAbertura.addEventListener("play", () => { iniciarStory.hidden = true; });
+videoAbertura.addEventListener("error", () => { iniciarStory.hidden = false; });
 iniciarStory.addEventListener("click", reproduzirAbertura);
+ativarSomStory.addEventListener("click", ativarSom);
 document.querySelector("#fechar-abertura").addEventListener("click", concluirAbertura);
 document.querySelector("#anterior").addEventListener("click", () => irPara(atual - 1));
 document.querySelector("#proxima").addEventListener("click", () => irPara(atual + 1));

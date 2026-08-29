@@ -313,12 +313,19 @@ h1 {
   background: rgba(0,0,0,.42); backdrop-filter: blur(12px); cursor: pointer;
 }
 .fechar-story:hover { background: rgba(176,65,103,.86); }
-.fechar-story:focus-visible, .iniciar-story:focus-visible { outline: 2px solid var(--ouro); outline-offset: 3px; }
+.fechar-story:focus-visible, .iniciar-story:focus-visible, .ativar-som-story:focus-visible { outline: 2px solid var(--ouro); outline-offset: 3px; }
 .fechar-story svg { width: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.ativar-som-story {
+  position: absolute; z-index: 4; left: 1rem; bottom: max(4.6rem, calc(env(safe-area-inset-bottom) + 4rem));
+  display: flex; align-items: center; gap: .5rem; padding: .7rem .9rem; border: 1px solid rgba(255,255,255,.38);
+  border-radius: 99px; color: white; background: rgba(8,8,20,.68); backdrop-filter: blur(14px); cursor: pointer;
+}
+.ativar-som-story svg { width: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ativar-som-story span { font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .iniciar-story {
-  position: absolute; z-index: 4; left: 50%; top: 50%; display: grid; justify-items: center; gap: .65rem; padding: 1rem 1.25rem;
+  position: absolute; z-index: 4; left: 50%; bottom: max(4.6rem, calc(env(safe-area-inset-bottom) + 4rem)); display: grid; justify-items: center; gap: .65rem; padding: 1rem 1.25rem;
   border: 1px solid rgba(255,255,255,.42); border-radius: 18px; color: white; background: rgba(8,8,20,.68);
-  backdrop-filter: blur(14px); cursor: pointer; transform: translate(-50%, -50%);
+  backdrop-filter: blur(14px); cursor: pointer; transform: translateX(-50%);
 }
 .iniciar-story svg { width: 28px; fill: currentColor; }
 .iniciar-story span { font-size: .7rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; white-space: nowrap; }
